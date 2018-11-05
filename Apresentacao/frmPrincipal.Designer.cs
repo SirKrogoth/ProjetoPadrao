@@ -43,6 +43,13 @@
             this.printSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sintomasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.examesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,6 +78,7 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairDoSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -83,14 +91,11 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sintomasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.examesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairDoSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.médicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.removerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.vincularEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -213,6 +218,58 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.exitToolStripMenuItem.Text = "Sai&r";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
+            // 
+            // cadastrarToolStripMenuItem
+            // 
+            this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pacientesToolStripMenuItem,
+            this.médicosToolStripMenuItem});
+            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            // 
+            // pacientesToolStripMenuItem
+            // 
+            this.pacientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novoToolStripMenuItem,
+            this.alterarToolStripMenuItem,
+            this.removerToolStripMenuItem,
+            this.sintomasToolStripMenuItem,
+            this.examesToolStripMenuItem});
+            this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pacientesToolStripMenuItem.Text = "Pacientes";
+            // 
+            // novoToolStripMenuItem
+            // 
+            this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.novoToolStripMenuItem.Text = "Novo";
+            this.novoToolStripMenuItem.Click += new System.EventHandler(this.novoToolStripMenuItem_Click);
+            // 
+            // alterarToolStripMenuItem
+            // 
+            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
+            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarToolStripMenuItem.Text = "Alterar";
+            // 
+            // removerToolStripMenuItem
+            // 
+            this.removerToolStripMenuItem.Name = "removerToolStripMenuItem";
+            this.removerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removerToolStripMenuItem.Text = "Remover";
+            // 
+            // sintomasToolStripMenuItem
+            // 
+            this.sintomasToolStripMenuItem.Name = "sintomasToolStripMenuItem";
+            this.sintomasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sintomasToolStripMenuItem.Text = "Sintomas";
+            // 
+            // examesToolStripMenuItem
+            // 
+            this.examesToolStripMenuItem.Name = "examesToolStripMenuItem";
+            this.examesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.examesToolStripMenuItem.Text = "Exames";
             // 
             // editMenu
             // 
@@ -446,6 +503,13 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.aboutToolStripMenuItem.Text = "&Sobre ... ...";
             // 
+            // sairDoSistemaToolStripMenuItem
+            // 
+            this.sairDoSistemaToolStripMenuItem.Name = "sairDoSistemaToolStripMenuItem";
+            this.sairDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.sairDoSistemaToolStripMenuItem.Text = "Sair do Sistema";
+            this.sairDoSistemaToolStripMenuItem.Click += new System.EventHandler(this.sairDoSistemaToolStripMenuItem_Click);
+            // 
             // toolStrip
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -545,63 +609,41 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // cadastrarToolStripMenuItem
+            // médicosToolStripMenuItem
             // 
-            this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pacientesToolStripMenuItem});
-            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            this.médicosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novoToolStripMenuItem1,
+            this.alterarToolStripMenuItem1,
+            this.removerToolStripMenuItem1,
+            this.vincularEspecialidadesToolStripMenuItem});
+            this.médicosToolStripMenuItem.Name = "médicosToolStripMenuItem";
+            this.médicosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.médicosToolStripMenuItem.Text = "Médicos";
             // 
-            // pacientesToolStripMenuItem
+            // novoToolStripMenuItem1
             // 
-            this.pacientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoToolStripMenuItem,
-            this.alterarToolStripMenuItem,
-            this.removerToolStripMenuItem,
-            this.sintomasToolStripMenuItem,
-            this.examesToolStripMenuItem});
-            this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pacientesToolStripMenuItem.Text = "Pacientes";
+            this.novoToolStripMenuItem1.Name = "novoToolStripMenuItem1";
+            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(196, 22);
+            this.novoToolStripMenuItem1.Text = "Novo";
             // 
-            // sintomasToolStripMenuItem
+            // alterarToolStripMenuItem1
             // 
-            this.sintomasToolStripMenuItem.Name = "sintomasToolStripMenuItem";
-            this.sintomasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sintomasToolStripMenuItem.Text = "Sintomas";
+            this.alterarToolStripMenuItem1.Name = "alterarToolStripMenuItem1";
+            this.alterarToolStripMenuItem1.Size = new System.Drawing.Size(196, 22);
+            this.alterarToolStripMenuItem1.Text = "Alterar";
             // 
-            // examesToolStripMenuItem
+            // removerToolStripMenuItem1
             // 
-            this.examesToolStripMenuItem.Name = "examesToolStripMenuItem";
-            this.examesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.examesToolStripMenuItem.Text = "Exames";
+            this.removerToolStripMenuItem1.Name = "removerToolStripMenuItem1";
+            this.removerToolStripMenuItem1.Size = new System.Drawing.Size(196, 22);
+            this.removerToolStripMenuItem1.Text = "Remover";
             // 
-            // novoToolStripMenuItem
+            // vincularEspecialidadesToolStripMenuItem
             // 
-            this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.novoToolStripMenuItem.Text = "Novo";
-            this.novoToolStripMenuItem.Click += new System.EventHandler(this.novoToolStripMenuItem_Click);
-            // 
-            // alterarToolStripMenuItem
-            // 
-            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
-            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.alterarToolStripMenuItem.Text = "Alterar";
-            // 
-            // removerToolStripMenuItem
-            // 
-            this.removerToolStripMenuItem.Name = "removerToolStripMenuItem";
-            this.removerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.removerToolStripMenuItem.Text = "Remover";
-            // 
-            // sairDoSistemaToolStripMenuItem
-            // 
-            this.sairDoSistemaToolStripMenuItem.Name = "sairDoSistemaToolStripMenuItem";
-            this.sairDoSistemaToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
-            this.sairDoSistemaToolStripMenuItem.Text = "Sair do Sistema";
-            this.sairDoSistemaToolStripMenuItem.Click += new System.EventHandler(this.sairDoSistemaToolStripMenuItem_Click);
+            this.vincularEspecialidadesToolStripMenuItem.Name = "vincularEspecialidadesToolStripMenuItem";
+            this.vincularEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.vincularEspecialidadesToolStripMenuItem.Text = "Vincular especialidades";
+            this.vincularEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.vincularEspecialidadesToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -691,6 +733,11 @@
         private System.Windows.Forms.ToolStripMenuItem sintomasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem examesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairDoSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem médicosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem vincularEspecialidadesToolStripMenuItem;
     }
 }
 

@@ -124,5 +124,10 @@ namespace Apresentacao
         {
             this.Close();
         }
+
+        private void vincularEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
