@@ -184,8 +184,14 @@ namespace Apresentacao
             txtTelefoneCelular.Text = string.Empty;
             txtResponsavel.Text = string.Empty;
             txtTelefoneResponsavel.Text = string.Empty;
+            txtCidade.Text = string.Empty;
 
             txtNome.Focus();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparFormulario();
         }
     }
 }

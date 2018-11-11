@@ -129,5 +129,18 @@ namespace Apresentacao
         {
 
         }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pacientes.frmConsultarPaciente fcp = new Pacientes.frmConsultarPaciente();
+
+            fcp.MdiParent = this;
+            fcp.Show();
+        }
     }
 }

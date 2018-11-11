@@ -44,7 +44,57 @@ namespace Modelo
                 acessarDados.executarManipulacao(CommandType.StoredProcedure, "SPInserirPaciente");
 
                 return true;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
 
+        public List<Paciente> BuscarPacienteNome(string nome = "todos")
+        {
+            try
+            {
+                acessarDados.limparParametro();
+
+                List<Paciente> pacientes = new List<Paciente>();
+
+                acessarDados.adicionarParametro("@nome", nome);
+
+                DataTable dataTable = acessarDados.executarConsulta(CommandType.StoredProcedure, "SPBuscarPacientes");
+
+                foreach (DataRow linha in dataTable.Rows)
+                {
+                    Paciente paciente = new Paciente();
+
+                    paciente.codigo = Convert.ToInt32(linha["codigo"]);
+                    paciente.nome = Convert.ToString(linha["nome"]);
+                    paciente.rg = Convert.ToString(linha["rg"]);
+
+                    if (Convert.ToChar(linha["sexo"]) == '1')
+                        paciente.sexo = 'M';
+                    else if (Convert.ToChar(linha["sexo"]) == '2')
+                        paciente.sexo = 'F';
+                    else
+                        paciente.sexo = 'O';
+
+                    paciente.pai = Convert.ToString(linha["pai"]);
+                    paciente.mae = Convert.ToString(linha["mae"]);
+                    paciente.bairro = Convert.ToString(linha["bairro"]);
+                    paciente.cidade = Convert.ToString(linha["cidade"]);
+                    paciente.cep = Convert.ToString(linha["cep"]);
+                    paciente.estadoCivil = Convert.ToString(linha["estadoCivil"]);
+                    paciente.telefone = Convert.ToString(linha["telefone"]);
+                    paciente.celular = Convert.ToString(linha["celular"]);
+                    paciente.responsavel = Convert.ToString(linha["responsabilidade"]);
+                    paciente.telefoneResponsavel = Convert.ToString(linha["telefoneResponsavel"]);
+                    paciente.estado = Convert.ToString(linha["estado"]);
+                    paciente.cpf = Convert.ToString(linha["cpf"]);
+
+                    pacientes.Add(paciente);
+                }
+
+                return pacientes;
             }
             catch (Exception e)
             {
