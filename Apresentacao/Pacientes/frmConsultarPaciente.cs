@@ -54,5 +54,16 @@ namespace Apresentacao.Pacientes
             if (e.KeyChar == 13)
                 AtualizarGrid();
         }
+
+        private void dgvPacientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Paciente pacienteSelecionado = new Paciente();
+
+            pacienteSelecionado = (dgvPacientes.SelectedRows[0].DataBoundItem as Paciente);
+
+            frmCadPaciente fcp = new frmCadPaciente(PacienteEnum.Atualizar, pacienteSelecionado);
+
+            fcp.Show();
+        }
     }
 }

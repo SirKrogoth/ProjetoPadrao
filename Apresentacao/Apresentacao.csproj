@@ -64,6 +64,7 @@
     <Compile Include="Pacientes\frmConsultarPaciente.Designer.cs">
       <DependentUpon>frmConsultarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pacientes\PacienteEnum.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Pacientes\frmCadPaciente.resx">

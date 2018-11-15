@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ObjetoTransferencia;
 using Modelo;
+using ProjetoPadrao;
 
 namespace Apresentacao
 {
@@ -17,6 +18,39 @@ namespace Apresentacao
         public frmCadPaciente()
         {
             InitializeComponent();
+        }
+
+        public frmCadPaciente(Pacientes.PacienteEnum acao, Paciente paciente)
+        {
+            InitializeComponent();
+
+            if(acao == Pacientes.PacienteEnum.Atualizar)
+            {
+                txtNome.Text = paciente.nome;
+
+                if (paciente.sexo == 'M')
+                    rbMasculino.Checked = true;
+                else if (paciente.sexo == 'F')
+                    rbFeminino.Checked = true;
+                else
+                    rbOutro.Checked = true;
+
+                txtCPF.Text = paciente.cpf;
+                txtRG.Text = paciente.rg;
+                cboEstadoCivil.Text = paciente.estadoCivil;
+                txtPai.Text = paciente.pai;
+                txtMae.Text = paciente.mae;
+                txtCEP.Text = paciente.cep;
+                txtCidade.Text = paciente.cidade;
+                cboEstado.Text = paciente.estado;
+                txtBairro.Text = paciente.bairro;
+                txtTelefonePrincipal.Text = paciente.telefone;
+                txtTelefoneCelular.Text = paciente.celular;
+                txtResponsavel.Text = paciente.responsavel;
+                txtTelefoneResponsavel.Text = paciente.telefoneResponsavel;
+                this.Tag = paciente.codigo;
+                btnGravar.Text = "Alterar Paciente";
+            }
         }
 
         private void txtNome_KeyDown(object sender, KeyEventArgs e)
@@ -127,8 +161,17 @@ namespace Apresentacao
 
             if (retorno == true)
             {
-                MessageBox.Show("Paciente cadastrado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimparFormulario();
+                if(btnGravar.Text.Equals("Gravar Paciente"))
+                {
+                    MessageBox.Show("Paciente cadastrado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimparFormulario();
+                }
+                else
+                {
+                    MessageBox.Show("Paciente alterado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimparFormulario();
+                }
+                
             }                
             else
                 MessageBox.Show("Não foi possível cadastrar o paciente.", "Sem sucesso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -160,11 +203,16 @@ namespace Apresentacao
             paciente.celular = txtTelefoneCelular.Text;
             paciente.responsavel = txtResponsavel.Text;
             paciente.telefoneResponsavel = txtTelefoneResponsavel.Text;
+            paciente.codigo = Convert.ToInt32(this.Tag);
 
             PacienteNegocio negocio = new PacienteNegocio();
 
-            bool retorno = negocio.InserirPaciente(paciente);
+            bool retorno = false;
 
+            if (btnGravar.Text.Equals("Gravar Paciente"))
+                retorno = negocio.InserirPaciente(paciente);
+            else
+                retorno = negocio.AlterarPaciente(paciente);
             return retorno;                
         }
 

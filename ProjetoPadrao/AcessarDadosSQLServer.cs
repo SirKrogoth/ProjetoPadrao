@@ -10,7 +10,7 @@ namespace ProjetoPadrao
 {
     public class AcessarDadosSQLServer
     {
-        string string_conexao = "Data Source=(local);Initial Catalog=hospital;User ID=sa;Password=506829; Trusted_Connection=True";
+        private string string_conexao = "Data Source=(local);Initial Catalog=hospital;User ID=sa;Password=506829; Trusted_Connection=True";
 
         SqlConnection sqlConnection;
         

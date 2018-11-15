@@ -51,6 +51,46 @@ namespace Modelo
             }
         }
 
+        public bool AlterarPaciente(Paciente paciente)
+        {
+            try
+            {
+                //limpar parametros
+                acessarDados.limparParametro();
+
+                //Adicionando parametros                
+                acessarDados.adicionarParametro("@nome", paciente.nome);
+                acessarDados.adicionarParametro("@rg", paciente.rg);
+                acessarDados.adicionarParametro("@cpf", paciente.cpf);
+
+                acessarDados.adicionarParametro("@sexo", paciente.sexo);
+
+                acessarDados.adicionarParametro("@pai", paciente.pai);
+                acessarDados.adicionarParametro("@mae", paciente.mae);
+                acessarDados.adicionarParametro("@bairro", paciente.bairro);
+                acessarDados.adicionarParametro("@cidade", paciente.cidade);
+                acessarDados.adicionarParametro("@estado", paciente.estado);
+                acessarDados.adicionarParametro("@cep", paciente.cep);
+                acessarDados.adicionarParametro("@estadoCivil", paciente.estadoCivil);
+                acessarDados.adicionarParametro("@telefone", paciente.telefone);
+                acessarDados.adicionarParametro("@celular", paciente.celular);
+                acessarDados.adicionarParametro("@responsavel", paciente.responsavel);
+                acessarDados.adicionarParametro("@telefoneResponsavel", paciente.telefoneResponsavel);
+                acessarDados.adicionarParametro("@codigo", paciente.codigo);
+
+                var retorno = acessarDados.executarManipulacao(CommandType.StoredProcedure, "SPAlterarPaciente");
+
+                if (retorno is null)
+                    return false;
+                else
+                    return true;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public List<Paciente> BuscarPacienteNome(string nome = "todos")
         {
             try
