@@ -12,5 +12,6 @@ namespace ObjetoTransferencia
         public string email { get; set; }
         public int idade { get; set; }
         public DateTime nascimento { get; set; }
+        public string endereco { get; set; }
     }
 }

@@ -142,5 +142,13 @@ namespace Apresentacao
             fcp.MdiParent = this;
             fcp.Show();
         }
+
+        private void novoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Medicos.frmCadMedico fcm = new Medicos.frmCadMedico();
+
+            fcm.MdiParent = this;
+            fcm.Show();
+        }
     }
 }

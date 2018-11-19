@@ -237,7 +237,7 @@
             this.sintomasToolStripMenuItem,
             this.examesToolStripMenuItem});
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
-            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pacientesToolStripMenuItem.Text = "Pacientes";
             // 
             // novoToolStripMenuItem
@@ -273,19 +273,20 @@
             this.alterarToolStripMenuItem1,
             this.vincularEspecialidadesToolStripMenuItem});
             this.médicosToolStripMenuItem.Name = "médicosToolStripMenuItem";
-            this.médicosToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.médicosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.médicosToolStripMenuItem.Text = "Médicos";
             // 
             // novoToolStripMenuItem1
             // 
             this.novoToolStripMenuItem1.Name = "novoToolStripMenuItem1";
-            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
+            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.novoToolStripMenuItem1.Text = "Novo";
+            this.novoToolStripMenuItem1.Click += new System.EventHandler(this.novoToolStripMenuItem1_Click);
             // 
             // alterarToolStripMenuItem1
             // 
             this.alterarToolStripMenuItem1.Name = "alterarToolStripMenuItem1";
-            this.alterarToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
+            this.alterarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.alterarToolStripMenuItem1.Text = "Consultar";
             // 
             // vincularEspecialidadesToolStripMenuItem
@@ -294,7 +295,7 @@
             this.novoToolStripMenuItem2,
             this.vincularToolStripMenuItem});
             this.vincularEspecialidadesToolStripMenuItem.Name = "vincularEspecialidadesToolStripMenuItem";
-            this.vincularEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.vincularEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vincularEspecialidadesToolStripMenuItem.Text = "Especialidades";
             this.vincularEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.vincularEspecialidadesToolStripMenuItem_Click);
             // 
